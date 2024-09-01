@@ -53,13 +53,13 @@ def add_object(self, context):
 
 class OBJECT_OT_Add_Custom_Mesh(Operator, AddObjectHelper):
     bl_idname = "mesh.add_custom_mesh"
-    bl_label = "Add Custom Mesh"
+    bl_label = "Add Quarter Pipe"
     bl_options = {'REGISTER', 'UNDO'}
 
     Resolution: IntProperty(
         name="Resolution",
         description="division count.",
-        default=6,
+        default=8,
         min=3,
         max=256
     )
@@ -67,13 +67,13 @@ class OBJECT_OT_Add_Custom_Mesh(Operator, AddObjectHelper):
     Height: FloatProperty(
         name="Height",
         description="height of poll.",
-        default=1.0,
+        default=10.0,
         min=0.0001
     )
     Radius: FloatProperty(
-        name="Height",
-        description="height of poll.",
-        default=1.0,
+        name="Radius",
+        description="Radius.",
+        default=2.0,
         min=0.0001
     )
 
@@ -84,19 +84,19 @@ class OBJECT_OT_Add_Custom_Mesh(Operator, AddObjectHelper):
 def menu_fn(self, context):
     self.layout.operator(
         OBJECT_OT_Add_Custom_Mesh.bl_idname,
-        text="Add Custom Mesh",
+        text="Add Quarter Pipe",
         icon='PLUGIN')
 
 def register():
     bpy.utils.register_class(OBJECT_OT_Add_Custom_Mesh)
     bpy.types.VIEW3D_MT_mesh_add.append(menu_fn)
-    print("register: custom mesh addon")
+    print("register: quarter pipe addon")
 
 
 def unregister():
     bpy.utils.unregister_class(OBJECT_OT_Add_Custom_Mesh)
     bpy.types.VIEW3D_MT_mesh_add.remove(menu_fn)
-    print("unregister: custom mesh addon")
+    print("unregister: quarter pipe addon")
 
 
 if __name__ == "__main__":

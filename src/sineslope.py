@@ -64,28 +64,29 @@ class OBJECT_OT_Add_Sine_Slope(Operator, AddObjectHelper):
     Amplitude: FloatProperty(
         name="Amplitude",
         description="Amplitude of the sine wave.",
-        default=0.01,
+        default=4.0,
         min=0.01
     )
     
     Wavelength: FloatProperty(
         name="Wavelength",
         description="Wavelength of the sine wave.",
-        default=1.0,
+        default=60,
         min=0.01
     )
 
     Length: FloatProperty(
         name="Length",
         description="Length of the sine slope.",
-        default=0.5,
+        default=32.0,
         min=0.01
     )
+    
 
     Height: FloatProperty(
         name="Height",
         description="Height of the sine slope.",
-        default=1.0,
+        default=5.0,
         min=0.01
     )
 
